@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title><%= dataUser.first_name %> <%= dataUser.last_name %></title>
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+
+    <body>
+        <div class="topnav">
+            <a href="/">Home</a>
+            <a href="/create">Create</a>
+            <a href="/upload">Upload</a>
+        </div>
+        <h1>detail page</h1>
+        <table>
+            <ul>
+                <li>First name: <%= dataUser.first_name %></li>
+                <li>Last name: <%= dataUser.last_name %></li>
+                <li>Email: <%= dataUser.email %></li>
+                <li>Address: <%= dataUser.address %></li>
+            </ul>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="/">Home</a>
+            <a href="/create">Create</a>
+            <a href="/upload">Upload</a>
+        </div>
+        <h1>List Users</h1>
+        <table>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>ID</th>
+                <th>Action</th>
+            </tr>
+            <%for(let i = 0; i < dataUsers.length; i++) {%>
+            <tr>
+                <td><%= dataUsers[i].first_name %></td>
+                <td><%= dataUsers[i].last_name %></td>
+                <td><%= dataUsers[i].id %></td>
+                <td>
+                    <button><a href="/details/user/<%= dataUsers[i].id %>">Details</a></button>
+                    <form action="/update-user/user/<%= dataUsers[i].id %>" method="get">
+                        <input type="text" name="id" value="<%= dataUsers[i].id %>" hidden />
+                        <button>Update</button>
+                    </form>
+                    <form action="delete-user" method="post">
+                        <input type="text" name="id" value="<%= dataUsers[i].id %>" hidden />
+                        <button>Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }%>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="/">Home</a>
+            <a href="/create">Create</a>
+            <a class="active" href="/upload">Upload</a>
+        </div>
+        <h1>Upload file</h1>
+        <div class="form">
+            <form action="/upload-profile-pic" method="post" enctype="multipart/form-data">
+                <label>single file</label>
+                <input type="file" name="profile_pic" />
+                <input type="submit" value="Save file" />
+            </form>
+        </div>
+        <form action="/upload-multiple-images" method="post" enctype="multipart/form-data">
+            <label>multiple file</label>
+            <input type="file" name="multiple_images" multiple />
+            <input type="submit" value="Save file" />
+        </form>
+    </body>
+</html>
